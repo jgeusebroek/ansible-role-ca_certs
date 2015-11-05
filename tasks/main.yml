@@ -1,0 +1,11 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Ensure local ca-certs directory exists
+  file: state=directory path={{ ca_certs_install_directory }} owner={{ ca_certs_install_directory_owner }} group={{ ca_certs_install_directory_group }} mode={{ ca_certs_install_directory_mode }}
+
+- name: Install certificate authorities
+  copy: src="{{ ca_certs_default_cert_location }}/{{ item}}" dest="{{ ca_certs_install_directory }}/{{ item }}" owner={{ ca_certs_install_directory_owner }} group={{ ca_certs_install_directory_group }} mode={{ ca_certs_install_file_mode }}
+  notify: update trusted certificate authority list
+  with_items: ca_certs_install

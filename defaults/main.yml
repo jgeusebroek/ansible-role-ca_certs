@@ -1,0 +1,6 @@
+---
+# List of certificate files to install
+ca_certs_install: []
+
+# The location of the certificate files, relative to the role location
+ca_certs_default_cert_location: "../../files/ca-certs/"

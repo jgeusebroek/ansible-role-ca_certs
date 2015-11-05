@@ -1,0 +1,8 @@
+---
+ca_certs_install_directory: "/etc/pki/ca-trust/source/anchors/"
+ca_certs_update_certs_command: "/usr/bin/update-ca-trust extract"
+
+ca_certs_install_file_mode: "0644"
+ca_certs_install_directory_mode: "2775"
+ca_certs_install_directory_owner: "root"
+ca_certs_install_directory_group: "root"
