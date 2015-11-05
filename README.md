@@ -11,7 +11,7 @@ None
 Example Playbook
 ----------------
 
-  ---
+    ---
     - hosts: all
       sudo: yes
 
@@ -24,9 +24,9 @@ Example Playbook
 Example Variables
 ----------------
 
-  # This expects a certificate in the files/ca-certs directory named ca-custom.crt
-  ca_certs_install:
-  [ 'ca-custom.crt' ]
+    # This expects a certificate in the files/ca-certs directory named ca-custom.crt
+    ca_certs_install:
+    [ 'ca-custom.crt' ]
 
 License
 -------
