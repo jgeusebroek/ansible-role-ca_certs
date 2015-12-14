@@ -1,5 +1,4 @@
 ---
-
-- name: update trusted certificate authority list
+- name: Update trusted certificate authority list
   shell: "{{ ca_certs_update_certs_command }}"
   tags: ca_certs
