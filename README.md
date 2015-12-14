@@ -26,7 +26,7 @@ None
       [ 'ca-custom.crt' ]
 
     # Location where the certificates can be found can be changed with:
-    ca_certs_default_cert_location: "../../files/ca-certs/"
+    ca_certs_default_cert_location: "{{ playbook_dir }}/files/ca-certs/"
 
 ## License
 
