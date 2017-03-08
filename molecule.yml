@@ -1,0 +1,30 @@
+---
+ansible:
+  playbook: tests/molecule_playbook.yml
+  ansiblecfg_defaults:
+    retry_files_enabled: False
+dependency:
+  name: galaxy
+driver:
+  name: docker
+docker:
+  containers:
+    - name: centos7
+      image: jgeusebroek/centos7-molecule
+      image_version: latest
+      ansible_groups:
+        - redhat
+    - name: debian8
+      image: jgeusebroek/debian8-molecule
+      image_version: latest
+      ansible_groups:
+        - debian
+    - name: ubuntu1604
+      image: jgeusebroek/ubuntu1604-molecule
+      image_version: latest
+      ansible_groups:
+        - ubuntu
+      links:
+        centos7: centos7
+verifier:
+  name: testinfra
