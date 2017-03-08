@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/jgeusebroek/ansible-role-ca_certs.svg?branch=master)](https://travis-ci.org/jgeusebroek/ansible-role-ca_certs)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-jgeusebroek.ca__certs-blue.svg)](https://galaxy.ansible.com/jgeusebroek/ca_certs)
+
 # Ansible role: ca_certs
 
 An Ansible Role that adds additional certificate authorities to RedHat/CentOS or Debian/Ubuntu.
@@ -34,4 +37,4 @@ MIT / BSD
 
 ## Author Information
 
-This role was created in 2015 by [Jeroen Geusebroek](http://jeroengeusebroek.nl/).
+By [Jeroen Geusebroek](http://jeroengeusebroek.nl/) 2016 - 2017.
