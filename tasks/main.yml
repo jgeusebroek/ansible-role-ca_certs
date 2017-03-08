@@ -18,4 +18,4 @@
     group: '{{ ca_certs_install_directory_group }}'
     mode: '{{ ca_certs_install_file_mode }}'
   notify: Update trusted certificate authority list
-  with_items: ca_certs_install
+  with_items: '{{ ca_certs_install }}'
