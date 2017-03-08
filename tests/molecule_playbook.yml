@@ -1,0 +1,16 @@
+---
+- hosts: all
+
+  vars:
+    ca_certs_default_cert_location: '{{ playbook_dir }}/certs'
+    ca_certs_install:  [ 'cacert.crt' ]
+
+  roles:
+    - role: jgeusebroek.ca_certs
+
+  pre_tasks:
+    - name: Ensure ca-certificates are installed, otherwise tests will fail | Debian
+      package:
+        name: ca-certificates
+        state: present
+      when: ansible_os_family == 'Debian'
