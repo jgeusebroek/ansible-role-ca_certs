@@ -19,6 +19,11 @@ docker:
       image_version: latest
       ansible_groups:
         - debian
+    - name: debian9
+      image: jgeusebroek/debian9-molecule
+      image_version: latest
+      ansible_groups:
+        - debian
     - name: ubuntu1604
       image: jgeusebroek/ubuntu1604-molecule
       image_version: latest
