@@ -29,8 +29,11 @@ platforms:
       image_version: latest
       ansible_groups:
         - ubuntu
-      links:
-        centos7: centos7
+    - name: ubuntu1804
+      image: jgeusebroek/ubuntu1804-molecule
+      image_version: latest
+      ansible_groups:
+        - ubuntu
 provisioner:
   name: ansible
   lint:
