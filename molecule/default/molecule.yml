@@ -5,7 +5,7 @@ driver:
   name: docker
 lint:
   name: yamllint
-  enabled: True
+  enabled: False
   options:
     config-file: molecule/default/.yamllint
 platforms:
