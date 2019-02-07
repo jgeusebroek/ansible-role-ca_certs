@@ -1,48 +1,22 @@
 ---
-dependency:
-  name: galaxy
 driver:
   name: docker
 lint:
   name: yamllint
-  enabled: False
+  enabled: true
   options:
-    config-file: molecule/default/.yamllint
+    config-file: molecule/default/yamllint.yml
 platforms:
-    - name: centos7
-      image: jgeusebroek/centos7-molecule
-      image_version: latest
-      pre_build_image: true
-      ansible_groups:
-        - redhat
-    - name: debian8
-      image: jgeusebroek/debian8-molecule
-      image_version: latest
-      pre_build_image: true
-      ansible_groups:
-        - debian
-    - name: debian9
-      image: jgeusebroek/debian9-molecule
-      image_version: latest
-      pre_build_image: true
-      ansible_groups:
-        - debian
-    - name: ubuntu1604
-      image: jgeusebroek/ubuntu1604-molecule
-      image_version: latest
-      pre_build_image: true
-      ansible_groups:
-        - ubuntu
-    - name: ubuntu1804
-      image: jgeusebroek/ubuntu1804-molecule
-      image_version: latest
-      pre_build_image: true
-      ansible_groups:
-        - ubuntu
+  - name: "${MOLECULE_DISTRO:-centos7}"
+    image: "jgeusebroek/${MOLECULE_DISTRO:-centos7}-molecule:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    pre_build_image: true
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
 scenario:
   name: default
 verifier:

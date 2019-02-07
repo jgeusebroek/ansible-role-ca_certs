@@ -12,7 +12,7 @@
 
 - name: Install certificate authorities
   copy:
-    src: '{{ ca_certs_default_cert_location }}/{{ item}}'
+    src: '{{ ca_certs_default_cert_location }}/{{ item }}'
     dest: '{{ ca_certs_install_directory }}/{{ item }}'
     owner: '{{ ca_certs_install_directory_owner }}'
     group: '{{ ca_certs_install_directory_group }}'

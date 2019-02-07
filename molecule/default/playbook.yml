@@ -3,7 +3,7 @@
 
   vars:
     ca_certs_default_cert_location: '{{ playbook_dir }}/certs'
-    ca_certs_install:  [ 'cacert.crt' ]
+    ca_certs_install: [ 'cacert.crt' ]
 
   roles:
     - role: jgeusebroek.ca_certs
